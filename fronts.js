@@ -42,18 +42,34 @@ class SLL {
         //Ternary operator: condition ? value_if_true  : value_if_false
         return this.head ? this.head.value : null;
     }
+
+    // DISPLAY! --------------------------------------------------------------------->
+
+    display() {
+        var listStr = "";
+
+        if (this.head == null) {
+            return listStr;
+        }
+        listStr += this.head.value;
+        var runner = this.head.next;
+        while (runner != null) {
+            listStr += ", " + runner.value;
+            runner = runner.next;
+        }
+        return listStr;
+    }
 }
 
+    // CONSOLE LOGS! --------------------------------------------------------------->
 var mySLL = new SLL();
-
+mySLL.addFront(10);
+mySLL.addFront(5);
+mySLL.addFront(3);
+console.log(mySLL.display());
 // console.log(mySLL.front());
-// mySLL.addFront(10);
-// console.log(mySLL.front());
-// mySLL.addFront(5);
-// mySLL.addFront(3);
 // console.log(mySLL);
 // mySLL.removeFront();
-
 // console.log(mySLL);
 // console.log(mySLL.head.next); 
 
